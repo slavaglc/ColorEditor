@@ -12,17 +12,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateColors()
+        updateColor()
     }
     
-    func updateColors() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+    func updateColor() {
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                            green: CGFloat(greenSlider.value),
+                                            blue: CGFloat(blueSlider.value), alpha: 1)
         redLabel.text = "Red: \(String(format: "%.3f", redSlider.value))"
         greenLabel.text = "Green: \(String(format: "%.3f", greenSlider.value))"
         blueLabel.text = "Blue: \(String(format: "%.3f", blueSlider.value))"
     }
     
     @IBAction func sliderChanged() {
-        updateColors()
+        updateColor()
     }
 }
