@@ -23,8 +23,4 @@ class ViewController: UIViewController {
         greenLabel.text = "Green: \(String(format: "%.3f", greenSlider.value))"
         blueLabel.text = "Blue: \(String(format: "%.3f", blueSlider.value))"
     }
-    
-    @IBAction func sliderChanged() {
-        updateColor()
-    }
 }
