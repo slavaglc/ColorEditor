@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ColorEditor
-//
-//  Created by slava on 10.07.2021.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
