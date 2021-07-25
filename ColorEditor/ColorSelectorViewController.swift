@@ -93,6 +93,20 @@ extension ColorSelectorViewController: UITextFieldDelegate {
          }
      
      @objc private func doneButtonAction() {
+        let numberFormatter = NumberFormatter()
+        guard let text = selectedTF.text else { return }
+        let number = numberFormatter.number(from: text)
         selectedTF.resignFirstResponder()
+        guard let float = number?.floatValue else { return }
+        guard float <= 1.0 else { return selectedTF.text = "1.00"}
+        
+        if selectedTF.tag == 0 {
+            redSlider.setValue(float, animated: true)
+        } else if selectedTF.tag == 1 {
+            greenSlider.setValue(float, animated: true)
+        } else {
+            blueSlider.setValue(float, animated: true)
+        }
+        updateColor()
      }
 }
