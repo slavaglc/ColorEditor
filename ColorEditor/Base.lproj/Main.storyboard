@@ -21,7 +21,7 @@
                     <navigationItem key="navigationItem" id="Wng-aS-7dM">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="8ic-XK-dgV">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="zim-ok-A4I"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="setColorSegue" id="zim-ok-A4I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
