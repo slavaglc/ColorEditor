@@ -22,7 +22,18 @@ class ColorSelectorViewController: UIViewController {
         updateColor()
     }
     
-    @IBAction func sliderChanged() {
+   
+    @IBAction func valueChanged(_ sender: UISlider) {
+        if sender.tag == 0 {
+            redLabel.text = String(format: "%.2f", sender.value)
+            redTextField.text = redLabel.text
+        } else if sender.tag == 1 {
+            greenLabel.text = String(format: "%.2f", sender.value)
+            greenTextField.text = greenLabel.text
+        } else {
+            blueLabel.text = String(format: "%.2f", sender.value)
+            blueTextField.text = blueLabel.text
+        }
         updateColor()
     }
     
@@ -31,11 +42,5 @@ class ColorSelectorViewController: UIViewController {
         colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
                                             green: CGFloat(greenSlider.value),
                                             blue: CGFloat(blueSlider.value), alpha: 1)
-        redLabel.text = String(format: "%.2f", redSlider.value)
-        redTextField.text = redLabel.text
-        greenLabel.text = String(format: "%.2f", greenSlider.value)
-        greenTextField.text = greenLabel.text
-        blueLabel.text = String(format: "%.2f", blueSlider.value)
-        blueTextField.text = blueLabel.text
     }
 }
