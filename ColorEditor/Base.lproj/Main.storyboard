@@ -77,7 +77,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="yrV-eU-rPn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -120,7 +120,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="u9O-Xj-p0n"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -163,7 +163,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="Z6f-dM-JUD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>

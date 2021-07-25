@@ -1,6 +1,5 @@
 import UIKit
 
-
 class ColorSelectorViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView!
@@ -13,21 +12,20 @@ class ColorSelectorViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    
     @IBOutlet weak var redTextField: UITextField!
     @IBOutlet weak var greenTextField: UITextField!
     @IBOutlet weak var blueTextField: UITextField!
     
     var color: UIColor!
+    var delegate: ColorSelectorViewControllerDelegate!
+    var selectedTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPrimaryGUI()
     }
     
-   
     @IBAction func valueChanged(_ sender: UISlider) {
-        print("Starting value changed")
         if sender.tag == 0 {
             redLabel.text = String(format: "%.2f", sender.value)
             redTextField.text = redLabel.text
@@ -43,16 +41,21 @@ class ColorSelectorViewController: UIViewController {
     
     private func setPrimaryGUI() {
         redSlider.value = Float(color.components.red)
-        redTextField.text = String(redSlider.value)
+        redTextField.text = String(format: "%.2f", redSlider.value)
         redLabel.text = redTextField.text
+        redTextField.delegate = self
         
         greenSlider.value = Float(color.components.green)
-        greenTextField.text = String(greenSlider.value)
+        greenTextField.text = String(format: "%.2f", greenSlider.value)
         greenLabel.text = greenTextField.text
+        greenTextField.delegate = self
         
         blueSlider.value = Float(color.components.blue)
-        blueTextField.text = String(blueSlider.value)
+        blueTextField.text = String(format: "%.2f", blueSlider.value)
         blueLabel.text = blueTextField.text
+        blueTextField.delegate = self
+        
+        addDoneButtonOnKeyboard()
         updateColor()
     }
         
@@ -61,6 +64,35 @@ class ColorSelectorViewController: UIViewController {
                            green: CGFloat(greenSlider.value),
                            blue: CGFloat(blueSlider.value), alpha: 1)
         colorView.backgroundColor = color
-        
+        delegate.setColor(color: color)
     }
+    
+  
+}
+
+extension ColorSelectorViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        selectedTF = textField
+    }
+    
+    private func addDoneButtonOnKeyboard(){
+             let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+             doneToolbar.barStyle = .default
+
+             let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+             let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+
+             let items = [flexSpace, done]
+             doneToolbar.items = items
+             doneToolbar.sizeToFit()
+
+         redTextField.inputAccessoryView = doneToolbar
+         greenTextField.inputAccessoryView = doneToolbar
+         blueTextField.inputAccessoryView = doneToolbar
+         }
+     
+     @objc private func doneButtonAction() {
+        selectedTF.resignFirstResponder()
+     }
 }

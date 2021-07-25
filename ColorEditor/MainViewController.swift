@@ -1,16 +1,22 @@
 import UIKit
 
+
+protocol ColorSelectorViewControllerDelegate {
+    func setColor(color: UIColor)
+}
+
 class MainViewController: UIViewController {
-    var color: UIColor!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        color = view.backgroundColor
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorSelectorVC = segue.destination as? ColorSelectorViewController else { return }
-        colorSelectorVC.color = color
+        colorSelectorVC.color = view.backgroundColor
+        colorSelectorVC.delegate = self
+    }
+}
+
+extension MainViewController: ColorSelectorViewControllerDelegate {
+    func setColor(color: UIColor) {
+        view.backgroundColor = color
     }
 }
 
