@@ -71,7 +71,7 @@
                                                     <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oRc-3M-Mep"/>
                                                 </connections>
                                             </slider>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="red" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXM-oL-mxb">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="red" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="SXM-oL-mxb">
                                                 <rect key="frame" x="268" y="0.0" width="40" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="yrV-eU-rPn"/>
@@ -114,7 +114,7 @@
                                                     <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="IDu-0n-hf4"/>
                                                 </connections>
                                             </slider>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="green" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3v-6e-f4K">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="green" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="o3v-6e-f4K">
                                                 <rect key="frame" x="268" y="0.0" width="40" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="u9O-Xj-p0n"/>
@@ -157,7 +157,7 @@
                                                     <action selector="valueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6gS-eX-Qh5"/>
                                                 </connections>
                                             </slider>
-                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="blue" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z3F-vT-Crd">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="blue" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Z3F-vT-Crd">
                                                 <rect key="frame" x="268" y="0.0" width="40" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="Z6f-dM-JUD"/>
@@ -181,15 +181,27 @@
                                     <constraint firstAttribute="width" secondItem="uxO-qM-XYk" secondAttribute="height" multiplier="89:43" id="Zso-O9-Nwh"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-WB-nPc">
+                                <rect key="frame" x="129" y="338" width="62" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="06n-k7-F0N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.39359430294447684" blue="0.75794847311432834" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9wQ-n4-A6F" firstAttribute="top" secondItem="uxO-qM-XYk" secondAttribute="bottom" constant="28" id="6IB-Tf-360"/>
                             <constraint firstItem="uxO-qM-XYk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="87X-wr-BVY"/>
+                            <constraint firstItem="glQ-WB-nPc" firstAttribute="top" secondItem="9wQ-n4-A6F" secondAttribute="bottom" constant="39" id="DLC-3s-rhT"/>
                             <constraint firstItem="uxO-qM-XYk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NcI-kJ-efW"/>
                             <constraint firstItem="uxO-qM-XYk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="fPk-9e-KFt"/>
                             <constraint firstItem="9wQ-n4-A6F" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qih-Ka-0P0"/>
+                            <constraint firstItem="glQ-WB-nPc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xA8-h9-u8N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uxO-qM-XYk" secondAttribute="trailing" constant="71" id="xWU-Bh-iMf"/>
                         </constraints>
                     </view>
@@ -239,6 +251,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

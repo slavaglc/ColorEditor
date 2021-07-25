@@ -39,6 +39,11 @@ class ColorSelectorViewController: UIViewController {
        updateColor()
     }
     
+    
+    @IBAction func doneTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func setPrimaryGUI() {
         redSlider.value = Float(color.components.red)
         redTextField.text = String(format: "%.2f", redSlider.value)
